@@ -69,16 +69,25 @@ class _HomePageState extends State<HomePage> {
                               // String imagePath = memes.url.toString();
                               // cropImage(memes.url.toString());
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                // border: Border.all(),
-                                image: DecorationImage(
-                                    image: NetworkImage(memes.url.toString()),
-                                  fit: BoxFit.cover
+                            child: Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      // border: Border.all(),
+                                      image: DecorationImage(
+                                          image: NetworkImage(memes.url.toString()),
+                                          fit: BoxFit.cover
+                                      )
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 6,
+                                  bottom: 3,
+                                  child: Text(memes.name.toString(),style: const TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
                                 )
-                              ),
-                            ),
+                              ],
+                            )
                           ),
                         );
                       },
